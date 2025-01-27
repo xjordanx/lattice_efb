@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<lscc:hdlparseresult version="1.0">
+    <modules>
+        <module name="efbspi">
+            <ports>
+                <port dir="in" name="wb_clk_i"/>
+                <port dir="in" name="wb_rst_i"/>
+                <port dir="in" name="wb_cyc_i"/>
+                <port dir="in" name="wb_stb_i"/>
+                <port dir="in" name="wb_we_i"/>
+                <port dir="in" name="wb_adr_i" range="(7,0)"/>
+                <port dir="in" name="wb_dat_i" range="(7,0)"/>
+                <port dir="out" name="wb_dat_o" range="(7,0)"/>
+                <port dir="out" name="wb_ack_o"/>
+                <port dir="inout" name="spi_clk"/>
+                <port dir="inout" name="spi_miso"/>
+                <port dir="inout" name="spi_mosi"/>
+                <port dir="in" name="spi_scsn"/>
+                <port dir="out" name="spi_csn" range="(0,0)"/>
+                <port dir="out" name="spi_irq"/>
+            </ports>
+        </module>
+    </modules>
+</lscc:hdlparseresult>

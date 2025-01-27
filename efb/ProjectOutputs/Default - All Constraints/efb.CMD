@@ -1,0 +1,20 @@
+PROJECT: efb
+WORKING_PATH: "C:/ECAD/FPGA_Designs/IP Cores/lattice_efb/efb/ProjectOutputs/Default - All Constraints"
+MODULE: BB
+VHDL_FILE_LIST:  "../../efb.vhd"
+
+OUTPUT_FILE_NAME: efb.edn
+SUFFIX_NAME: edn
+Vlog_std_v2001: true
+DISABLE_IO_INSERTION: true
+SYMBOLIC_FSM_COMPILER: true
+FANOUT_LIMIT: 100
+FREQUENCY: 200
+CONSTRAINT_FILE_NAME: efb_Synth.SDC
+AUTO_CONSTRAIN_IO: true
+FORCE_GSR: auto
+NUM_CRITICAL_PATHS: 3
+NUM_STARTEND_POINTS: 0
+WRITE_VHDL: false
+WRITE_VERILOG: false
+WRITE_PRF: true
