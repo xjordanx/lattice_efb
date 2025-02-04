@@ -1,0 +1,442 @@
+
+<lsccip:memoryMaps xmlns:lsccip="http://www.latticesemi.com/XMLSchema/Radiant/ip">
+    <lsccip:memoryMap>
+        <lsccip:name>efb_spi_memory_map</lsccip:name>
+        <lsccip:description>efb_memory_map_with_spim</lsccip:description>
+        <lsccip:addressBlock>
+            <lsccip:name>EFB_BASE</lsccip:name>
+            <lsccip:baseAddress>0</lsccip:baseAddress>
+            <lsccip:range>477</lsccip:range>
+            <lsccip:width>32</lsccip:width>
+        </lsccip:addressBlock>
+        <lsccip:addressBlock>
+            <lsccip:name>EFB_SPI_BASE</lsccip:name>
+            <lsccip:baseAddress>0x150</lsccip:baseAddress>
+            <lsccip:range>64</lsccip:range>
+            <lsccip:width>32</lsccip:width>
+            <lsccip:register>
+                <lsccip:name>SPICR0</lsccip:name>
+                <lsccip:displayName>SPICR0</lsccip:displayName>
+                <lsccip:description>SPI Configuration Register 0</lsccip:description>
+                <lsccip:addressOffset>0x0</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-write</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>TIDLE</lsccip:name>
+                    <lsccip:displayName>TIDLE</lsccip:displayName>
+                    <lsccip:description>Idle Delay Count [0.5 | 1.0 | 1.5 | 2.0] in SPI_CLK Periods</lsccip:description>
+                    <lsccip:bitOffset>6</lsccip:bitOffset>
+                    <lsccip:bitWidth>2</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>TTRAIL</lsccip:name>
+                    <lsccip:displayName>TTRAIL</lsccip:displayName>
+                    <lsccip:description>Trail Delay Count [0.5 | 1.0 ... 4.0] SPI_CLK Periods.</lsccip:description>
+                    <lsccip:bitOffset>3</lsccip:bitOffset>
+                    <lsccip:bitWidth>3</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>TLEAD</lsccip:name>
+                    <lsccip:displayName>TLEAD</lsccip:displayName>
+                    <lsccip:description>Lead Delay Count [0.5 | 1 ... 4] SPI_CLK Periods.</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>3</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPICR1</lsccip:name>
+                <lsccip:displayName>SPICR1</lsccip:displayName>
+                <lsccip:description>SPI Configuration Register 1</lsccip:description>
+                <lsccip:addressOffset>0x4</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-write</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>SPE</lsccip:name>
+                    <lsccip:displayName>SPE</lsccip:displayName>
+                    <lsccip:description>SPI Core Enable [0 = Disabled | 1 = Enabled]</lsccip:description>
+                    <lsccip:bitOffset>7</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>WKUPEN_USER</lsccip:name>
+                    <lsccip:displayName>WKUPEN_USER</lsccip:displayName>
+                    <lsccip:description>Wake-Up Enable by User.</lsccip:description>
+                    <lsccip:bitOffset>6</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>WKUPEN_CFG</lsccip:name>
+                    <lsccip:displayName>WKUPEN_CFG</lsccip:displayName>
+                    <lsccip:description>Wake-Up Enable Configuration.</lsccip:description>
+                    <lsccip:bitOffset>5</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>TXEDGE</lsccip:name>
+                    <lsccip:displayName>TXEDGE</lsccip:displayName>
+                    <lsccip:description>Tx Data Edge [0 = Defined by CPOL+CPHA | 1 = 0.5 before CPOL+CPHA Definition]</lsccip:description>
+                    <lsccip:bitOffset>4</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPICR2</lsccip:name>
+                <lsccip:displayName>SPICR2</lsccip:displayName>
+                <lsccip:description>SPI Configuration Register 2</lsccip:description>
+                <lsccip:addressOffset>0x8</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-write</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>MSTR</lsccip:name>
+                    <lsccip:displayName>MSTR</lsccip:displayName>
+                    <lsccip:description>Master SPI Mode [1 = SPI Core is a Master | 0 = SPI Core is a slave]</lsccip:description>
+                    <lsccip:bitOffset>7</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>MCSH</lsccip:name>
+                    <lsccip:displayName>MCSH</lsccip:displayName>
+                    <lsccip:description>SPI Master CSSPIN Hold [0 = Do not hold SPI_CSN low]</lsccip:description>
+                    <lsccip:bitOffset>6</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>SDBRE</lsccip:name>
+                    <lsccip:displayName>SDBRE</lsccip:displayName>
+                    <lsccip:description>Slave Dummy Byte Response Enable [0 = Normal SPI operation | 1 = Lattice Proprietary operation]</lsccip:description>
+                    <lsccip:bitOffset>5</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CPOL</lsccip:name>
+                    <lsccip:displayName>CPOL</lsccip:displayName>
+                    <lsccip:description>Clock Polarity [0 = Active High Clock | 1 = Active Low Clock]</lsccip:description>
+                    <lsccip:bitOffset>2</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CPHA</lsccip:name>
+                    <lsccip:displayName>CPHA</lsccip:displayName>
+                    <lsccip:description>SPI Clock Phase [0 = Leading Edge Sample | 1 = Trailing Edge Sample]</lsccip:description>
+                    <lsccip:bitOffset>1</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>LSBF</lsccip:name>
+                    <lsccip:displayName>LSBF</lsccip:displayName>
+                    <lsccip:description>LSB-First [0 = MSb First (Default)]</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPIBR</lsccip:name>
+                <lsccip:displayName>SPIBR</lsccip:displayName>
+                <lsccip:description>Bit Rate Clock Divisor (SPI Clock Rate Control)</lsccip:description>
+                <lsccip:addressOffset>0xC</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-write</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>DIVIDER</lsccip:name>
+                    <lsccip:displayName>DIVIDER</lsccip:displayName>
+                    <lsccip:description>Bits [5:0] set the divider for SPI_CLK from host system clock.</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>6</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPICSR</lsccip:name>
+                <lsccip:displayName>SPICSR</lsccip:displayName>
+                <lsccip:description>SPI Status Register</lsccip:description>
+                <lsccip:addressOffset>0x10</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-write</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>CSN_0</lsccip:name>
+                    <lsccip:displayName>CSN_0</lsccip:displayName>
+                    <lsccip:description>Master Chip Select 0 [Hard wired to dedicated SCSN pin]</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CSN_1</lsccip:name>
+                    <lsccip:displayName>CSN_1</lsccip:displayName>
+                    <lsccip:description>Master chip select 1</lsccip:description>
+                    <lsccip:bitOffset>1</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CSN_2</lsccip:name>
+                    <lsccip:displayName>CSN_2</lsccip:displayName>
+                    <lsccip:description>Master chip select 2</lsccip:description>
+                    <lsccip:bitOffset>2</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CSN_3</lsccip:name>
+                    <lsccip:displayName>CSN_3</lsccip:displayName>
+                    <lsccip:description>Master chip select 3</lsccip:description>
+                    <lsccip:bitOffset>3</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CSN_4</lsccip:name>
+                    <lsccip:displayName>CSN_4</lsccip:displayName>
+                    <lsccip:description>Master chip select 4</lsccip:description>
+                    <lsccip:bitOffset>4</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CSN_5</lsccip:name>
+                    <lsccip:displayName>CSN_5</lsccip:displayName>
+                    <lsccip:description>Master chip select 5</lsccip:description>
+                    <lsccip:bitOffset>5</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CSN_6</lsccip:name>
+                    <lsccip:displayName>CSN_6</lsccip:displayName>
+                    <lsccip:description>Master chip select 6</lsccip:description>
+                    <lsccip:bitOffset>6</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>CSN_7</lsccip:name>
+                    <lsccip:displayName>CSN_7</lsccip:displayName>
+                    <lsccip:description>Master chip select 7</lsccip:description>
+                    <lsccip:bitOffset>7</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPITXDR</lsccip:name>
+                <lsccip:displayName>SPITXDR</lsccip:displayName>
+                <lsccip:description>New Register</lsccip:description>
+                <lsccip:addressOffset>0x14</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>write-only</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>TXDR</lsccip:name>
+                    <lsccip:displayName>TXDR</lsccip:displayName>
+                    <lsccip:description>Transmit Data Register [7:0]</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>8</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>write-only</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPISR</lsccip:name>
+                <lsccip:displayName>SPISR</lsccip:displayName>
+                <lsccip:description>New Register</lsccip:description>
+                <lsccip:addressOffset>0x18</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-only</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>TIP</lsccip:name>
+                    <lsccip:displayName>TIP</lsccip:displayName>
+                    <lsccip:description>Transmit In Progress [0 = Tx complete | 1 = Tx in progress]</lsccip:description>
+                    <lsccip:bitOffset>7</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-only</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>TRDY</lsccip:name>
+                    <lsccip:displayName>TRDY</lsccip:displayName>
+                    <lsccip:description>Transmit Ready [0 = TXDR is not empty | 1 = TXDR is Empty]</lsccip:description>
+                    <lsccip:bitOffset>4</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-only</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>RRDY</lsccip:name>
+                    <lsccip:displayName>RRDY</lsccip:displayName>
+                    <lsccip:description>Receive Ready [0 = RXDR contains no data | 1 = RXDR contains valid data]</lsccip:description>
+                    <lsccip:bitOffset>3</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-only</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>ROE</lsccip:name>
+                    <lsccip:displayName>ROE</lsccip:displayName>
+                    <lsccip:description>Receive Overrun Error [0 = Normal | 1 = Overrun detected]</lsccip:description>
+                    <lsccip:bitOffset>1</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-only</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>MDF</lsccip:name>
+                    <lsccip:displayName>MDF</lsccip:displayName>
+                    <lsccip:description>Mode Fault [0 = No fault detected]</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-only</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPIRXDR</lsccip:name>
+                <lsccip:displayName>SPIRXDR</lsccip:displayName>
+                <lsccip:description>New Register</lsccip:description>
+                <lsccip:addressOffset>0x1C</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-only</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>RXDR</lsccip:name>
+                    <lsccip:displayName>RXDR</lsccip:displayName>
+                    <lsccip:description>Received data register [7:0]</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>8</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-only</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPIIRQ</lsccip:name>
+                <lsccip:displayName>SPIIRQ</lsccip:displayName>
+                <lsccip:description>SPI Interrup Request Register</lsccip:description>
+                <lsccip:addressOffset>0x20</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-write</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>IRQTRDY</lsccip:name>
+                    <lsccip:displayName>IRQTRDY</lsccip:displayName>
+                    <lsccip:description>Transmit Ready Interrupt [0 = No Int. | 1 = Transmit Data Ready Interrupt Requested]</lsccip:description>
+                    <lsccip:bitOffset>4</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>IRQRRDY</lsccip:name>
+                    <lsccip:displayName>IRQRRDY</lsccip:displayName>
+                    <lsccip:description>Receive Data Ready Interrupt [0 = No Int. | 1 = Receive Data Ready Interrupt Requested]</lsccip:description>
+                    <lsccip:bitOffset>3</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>IRQROE</lsccip:name>
+                    <lsccip:displayName>IRQROE</lsccip:displayName>
+                    <lsccip:description>Receive Overrun Error Interrupt [0 = No Int. | 1 = Overrun Interrupt Requested]</lsccip:description>
+                    <lsccip:bitOffset>1</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>IRQMDF</lsccip:name>
+                    <lsccip:displayName>IRQMDF</lsccip:displayName>
+                    <lsccip:description>Mode Fault Interrupt [0 = No int. | 1 = Mode Fault Interrupt Requested]</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+            <lsccip:register>
+                <lsccip:name>SPIIRQEN</lsccip:name>
+                <lsccip:displayName>SPIIRQEN</lsccip:displayName>
+                <lsccip:description>SPI Interrupt Enable Register</lsccip:description>
+                <lsccip:addressOffset>0x24</lsccip:addressOffset>
+                <lsccip:size>32</lsccip:size>
+                <lsccip:volatile>true</lsccip:volatile>
+                <lsccip:access>read-write</lsccip:access>
+                <lsccip:field>
+                    <lsccip:name>IRQTRDYEN</lsccip:name>
+                    <lsccip:displayName>IRQTRDYEN</lsccip:displayName>
+                    <lsccip:description>Write 1 to this bit to enable Transmit Ready Interrupt.</lsccip:description>
+                    <lsccip:bitOffset>4</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>IRQRRDYEN</lsccip:name>
+                    <lsccip:displayName>IRQRRDYEN</lsccip:displayName>
+                    <lsccip:description>Write 1 to this bit to enable the Receive Ready Interrupt.</lsccip:description>
+                    <lsccip:bitOffset>3</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>IRQROEEN</lsccip:name>
+                    <lsccip:displayName>IRQROEEN</lsccip:displayName>
+                    <lsccip:description>Write 1 to this bit to enable the Receive Overrun Interrupt.</lsccip:description>
+                    <lsccip:bitOffset>1</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+                <lsccip:field>
+                    <lsccip:name>IRQMDFEN</lsccip:name>
+                    <lsccip:displayName>IRQMDFEN</lsccip:displayName>
+                    <lsccip:description>Wirte 1 to this bit to enable the MDF Interrupt.</lsccip:description>
+                    <lsccip:bitOffset>0</lsccip:bitOffset>
+                    <lsccip:bitWidth>1</lsccip:bitWidth>
+                    <lsccip:volatile>true</lsccip:volatile>
+                    <lsccip:access>read-write</lsccip:access>
+                </lsccip:field>
+            </lsccip:register>
+        </lsccip:addressBlock>
+    </lsccip:memoryMap>
+</lsccip:memoryMaps>

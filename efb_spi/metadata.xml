@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<lsccip:ip xmlns:lsccip="http://www.latticesemi.com/XMLSchema/Radiant/ip" xmlns:xi="http://www.w3.org/2001/XInclude" version="2.0" platform="Propel" platform_version="2024.1">
+    <lsccip:general>
+        <lsccip:vendor>JordanDSP LLC</lsccip:vendor>
+        <lsccip:library>ip</lsccip:library>
+        <lsccip:name>efb_spi</lsccip:name>
+        <lsccip:display_name>EFB_SPI_MASTER</lsccip:display_name>
+        <lsccip:version>1.0.0</lsccip:version>
+        <lsccip:category>Processors_Controllers_and_Peripherals</lsccip:category>
+        <lsccip:keywords>Embedded Function Block SPI, SPI Master</lsccip:keywords>
+        <lsccip:type>Module</lsccip:type>
+        <lsccip:instantiatedOnce>true</lsccip:instantiatedOnce>
+        <lsccip:min_radiant_version>2024.1</lsccip:min_radiant_version>
+        <lsccip:min_esi_version>2024.1</lsccip:min_esi_version>
+        <lsccip:supported_products>
+            <lsccip:supported_family name="*" />
+            <lsccip:supported_family name="MachXO2" />
+        </lsccip:supported_products>
+        <lsccip:supported_platforms>
+            <lsccip:supported_platform name="esi" />
+        </lsccip:supported_platforms>
+    </lsccip:general>
+    <lsccip:settings>
+        <lsccip:setting id="SYSTEM_CLK_MHZ"
+                        type="param"
+                        value_type="float"
+                        conn_mod=""
+                        title="System Clock Frequency (MHz)"
+                        default="50"
+                        group1="CONFIG"
+                        group2="TABLE"
+         />
+        <lsccip:setting id="SPI_CLK"
+                        type="param"
+                        value_type="float"
+                        conn_mod=""
+                        title="SPI Clock Frequency (MHz)"
+                        default="1"
+                        group1="CONFIG"
+                        group2="TABLE"
+         />
+        <lsccip:setting id="SPI_CLK_DIV"
+                        type="param"
+                        value_type="int"
+                        conn_mod=""
+                        title="SPI Clock Divider Value"
+                        value_expr="int( round( (SYSTEM_CLK_MHZ*1000000) / (SPI_CLK*1000000) ) )"
+                        editable="False"
+                        group1="CONFIG"
+                        group2="TABLE"
+         />
+    </lsccip:settings>
+    <lsccip:ports>
+        <lsccip:port name="apb_pclk"
+                     dir="in"
+                     conn_mod=""
+                     conn_port="pclk"
+                     port_type="clock"
+         />
+        <lsccip:port name="apb_resetn"
+                     dir="in"
+                     conn_mod=""
+                     conn_port="apb_resetn"
+                     bus_interface="APB_S0"
+                     port_type="reset"
+         />
+        <lsccip:port name="apb_addr"
+                     dir="in"
+                     conn_mod=""
+                     range="(31,0)"
+                     conn_port="apb_addr"
+                     bus_interface="APB_S0"
+         />
+        <lsccip:port name="apb_pselx"
+                     dir="in"
+                     conn_mod=""
+                     conn_port="apb_pselx"
+                     bus_interface="APB_S0"
+         />
+        <lsccip:port name="apb_penable"
+                     dir="in"
+                     conn_mod=""
+                     conn_port="apb_penable"
+                     bus_interface="APB_S0"
+         />
+        <lsccip:port name="apb_pwrite"
+                     dir="in"
+                     conn_mod=""
+                     conn_port="apb_pwrite"
+                     bus_interface="APB_S0"
+         />
+        <lsccip:port name="apb_pwdata"
+                     dir="in"
+                     conn_mod=""
+                     range="(31,0)"
+                     conn_port="apb_pwdata"
+                     bus_interface="APB_S0"
+         />
+        <lsccip:port name="spi_scsn"
+                     dir="in"
+                     conn_mod=""
+                     conn_port="spi_scsn"
+         />
+        <lsccip:port name="spi_miso"
+                     dir="inout"
+                     conn_mod=""
+                     conn_port="spi_miso"
+                     port_type="data"
+         />
+        <lsccip:port name="spi_clk"
+                     dir="inout"
+                     conn_mod=""
+                     conn_port="spi_clk"
+                     port_type="clock"
+         />
+        <lsccip:port name="spi_mosi"
+                     dir="inout"
+                     conn_mod=""
+                     conn_port="spi_mosi"
+                     port_type="data"
+         />
+        <lsccip:port name="apb_pready"
+                     dir="out"
+                     conn_mod=""
+                     conn_port="apb_pready"
+                     bus_interface="APB_S0"
+         />
+        <lsccip:port name="apb_prdata"
+                     dir="out"
+                     conn_mod=""
+                     range="(31,0)"
+                     conn_port="apb_prdata"
+                     bus_interface="APB_S0"
+         />
+        <lsccip:port name="spi_csn"
+                     dir="out"
+                     conn_mod=""
+                     conn_port="spi_csn"
+         />
+        <lsccip:port name="spi_irq"
+                     dir="out"
+                     conn_mod=""
+                     conn_port="INTR"
+                     bus_interface="INT_M0"
+         />
+        <lsccip:port name="apb_pslverr"
+                     dir="out"
+                     conn_mod=""
+                     conn_port="apb_pslverr"
+                     bus_interface="APB_S0"
+         />
+    </lsccip:ports>
+    <xi:include parse="xml" href="bus_interface.xml" />
+    <xi:include parse="xml" href="memory_map.xml" />
+</lsccip:ip>

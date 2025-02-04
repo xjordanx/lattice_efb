@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<ippackgerproject version="1.0">
+    <filegroups>
+        <filegroup filetype="metadata">
+            <file path="metadata.xml"/>
+        </filegroup>
+        <filegroup filetype="sub_metadata">
+            <file path="bus_interface.xml"/>
+            <file path="memory_map.xml"/>
+        </filegroup>
+        <filegroup filetype="rtl">
+            <file path="efb_spi.vhd" encryption="0" type="vhdl" lib=""/>
+            <file path="efb_spi_wb.vhd" encryption="0" type="vhdl" lib=""/>
+        </filegroup>
+        <filegroup filetype="driver">
+            <file path="../efb_propel_drivers/efb_spi.c"/>
+            <file path="../efb_propel_drivers/efb_spi.h"/>
+        </filegroup>
+        <filegroup filetype="doc">
+            <file path="doc/introduction.html"/>
+        </filegroup>
+        <filegroup filetype="key">
+            <file path="../../../../lscc/propel/2024.1/builder/rtf/ispfpga/data/key.txt"/>
+        </filegroup>
+    </filegroups>
+</ippackgerproject>

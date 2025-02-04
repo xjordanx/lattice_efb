@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ippackgerproject version="1.0">
+    <filegroups>
+        <filegroup filetype="rtl">
+            <file type="vhdl" lib="" path="../efb_spi/efb_spi_wb.vhd" encryption="0"/>
+        </filegroup>
+        <filegroup filetype="key">
+            <file path="../../../../lscc/propel/2024.1/builder/rtf/ispfpga/data/key.txt"/>
+        </filegroup>
+    </filegroups>
+</ippackgerproject>

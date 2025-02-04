@@ -10,8 +10,8 @@ entity apb_wb_bridge is
     );
     port (
         -- APB Signals
-        apb_pclk     : in  std_logic;
-        apb_resetn   : in  std_logic;
+        apb_pclk_i   : in  std_logic;
+        apb_resetn_i : in  std_logic;
         apb_addr     : in  std_logic_vector(ADDR_WIDTH-1 downto 0);
         apb_pselx    : in  std_logic;
         apb_penable  : in  std_logic;
@@ -30,7 +30,11 @@ entity apb_wb_bridge is
         wb_adr_o    : out std_logic_vector(ADDR_WIDTH-1 downto 0);
         wb_dat_o    : out std_logic_vector(SLAVE_DATA_WIDTH-1 downto 0);
         wb_dat_i    : in  std_logic_vector(SLAVE_DATA_WIDTH-1 downto 0);
-        wb_ack_i    : in  std_logic
+        wb_ack_i    : in  std_logic;
+		
+		-- Interrupt pass-through
+		int_o	: out std_logic;
+		int_i	: in std_logic
     );
 end apb_wb_bridge;
 
@@ -38,8 +42,8 @@ architecture Behavioral of apb_wb_bridge is
 begin
     assert (SLAVE_DATA_WIDTH <= HOST_DATA_WIDTH) report "Error: SLAVE bus width exceeds HOST." severity Failure;
     -- Connect APB clock and reset to Wishbone clock and reset
-    wb_clk_o <= apb_pclk;
-    wb_rst_o <= not apb_resetn;
+    wb_clk_o <= apb_pclk_i;
+    wb_rst_o <= not apb_resetn_i;
 
     -- Map APB address to Wishbone address
     wb_adr_o <= apb_addr;
@@ -63,6 +67,9 @@ begin
 
     -- APB slave error fixed to 0
     apb_pslverr <= '0';
+	
+	-- Interrupt port pass-through (for adapting with bus connections in Propel)
+	int_o <= int_i;
 
 end Behavioral;
 
